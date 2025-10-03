@@ -1,0 +1,253 @@
+/* ---------- Base ---------- */
+/* 1) Borra márgenes/paddings por defecto arriba */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2) Asegura que el contenedor del tablero no se separe arriba */
+.board-wrapper {
+  margin-top: 0 !important;
+  min-height: auto !important;
+  align-items: flex-start !important;  /* ya lo venías usando */
+}
+
+/* 3) La tabla no debe aportar margen */
+table.board {
+  margin: 0 !important;
+}
+
+/* 4) Por si algún título global colapsa márgenes al tope */
+h1, h2 {
+  margin-top: 0 !important;
+}
+
+html {
+  background-color: #bfbfbf;
+  scroll-behavior: smooth;
+    margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+ #home{
+  margin: 0 !important;
+  padding: 0 !important;
+ }
+
+/* ---------- Banner / Nav / Contenido ---------- */
+.banner {
+  background-color: blue;
+  color: #ddd;
+  padding: 20px;
+}
+
+.navbar {
+  background-color: black;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navlink {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navlink:hover { color: #ffcc00; }
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 25px 0 15px;
+  color: #444;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 25px 0 15px;
+  color: #444;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Mostrar “Home” por defecto (con :target para las otras secciones) */
+.content { display: none; padding: 20px; border: 1px solid #ddd; }
+.content:target { display: block; }
+.content#home { display: block; }
+
+/* ---------- Video responsivo ---------- */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.video-container iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* ---------- Variables del tablero ---------- */
+:root{
+  --light: #90ee9099;
+  --dark:  #00640099;
+  --special-a: #ffd54f99;   /* amarillo suave */
+  --special-b: #a52a2a99;     /* marrón */
+  --cell-w: 34px;         /* más ancho */
+  --cell-h: 18px;         /* más bajo */
+  --cell-border: 1px solid #000; /* borde fino negro */
+}
+
+/* ---------- Wrapper del tablero centrado en la pantalla ---------- */
+.board-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;   /* centra horizontalmente */
+  align-items: flex-start;   /* alinea arriba en lugar de en el medio */
+  min-height: auto;          /* quita la altura forzada */
+  margin-top: 20px;          /* opcional: da un margen fijo arriba */
+  overflow: auto;            /* permite scroll si no entra */
+ /*background:
+    conic-gradient(
+      var(--light) 25%,
+      var(--dark) 0 50%,
+      var(--light) 0 75%,
+      var(--dark) 0
+    )
+    /* Colocamos una "esquina" del tile en el centro horizontal,
+       y arriba (y=0) para alinear con la fila superior del tablero */
+    /*calc(50% - var(--cell-w)) 0
+    / calc(2 * var(--cell-w)) calc(2 * var(--cell-h)) repeat;*/
+}
+
+
+/* ---------- Título superpuesto ---------- */
+.board-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Ajuste que ya venías usando; mantenido */
+  transform: translate(-50%, -49%);
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 0.8;
+  color: darkred;
+  text-shadow: 2px 2px 2px #000;
+  pointer-events: none; /* no bloquea clics en las celdas */
+}
+.board-title .title-word { display: block; }
+.board-title .title-word:nth-child(2) { font-size: 3.3rem; margin: 6px 0; }
+
+/* Color específico para la & si usas id="amper" */
+#amper {
+  color: #ddd;
+  text-shadow: 2px 2px 2px #000;; /* corregido (antes #red no era válido) */
+}
+
+/* ---------- Tabla del tablero ---------- */
+table.board {
+  border-collapse: collapse;
+  table-layout: fixed;  /* fija el tamaño de las celdas */
+  margin: 0;            /* el centrado lo maneja el wrapper */
+  
+}
+
+/* Celdas */
+.board td {
+  width: var(--cell-w);
+  height: var(--cell-h);
+  min-width: var(--cell-w);   /* asegura tamaño fijo */
+  min-height: var(--cell-h);
+  border: var(--cell-border);
+  text-align: center;
+  vertical-align: middle;
+  background: var(--light);
+  font: 500 14px/1 system-ui, sans-serif;
+  user-select: none;
+  
+}
+
+/* Patrón alternado (tablero) */
+.board tr:nth-child(odd)  td:nth-child(odd)  { background: var(--light); }
+.board tr:nth-child(odd)  td:nth-child(even) { background: var(--dark);  }
+.board tr:nth-child(even) td:nth-child(odd)  { background: var(--dark);  }
+.board tr:nth-child(even) td:nth-child(even) { background: var(--light); }
+
+/* Celdas especiales */
+.board td.special-a { background: var(--special-a) !important; }
+.board td.special-b { background: var(--special-b) !important; }
+
+/* IDs opcionales para posiciones únicas */
+.board td#spawn { background: #c8e6c9 !important; } /* verde suave */
+.board td#goal  { background: #ffcdd2 !important; } /* rojo suave */
+
+/* Sección tipo revista */
+.magazine-section {
+  max-width: 1200px;   /* ancho máximo */
+  margin: 40px auto;   /* centrado */
+  padding: 0 20px;     /* espacio lateral */
+}
+
+.magazine-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.mag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 columnas adaptables */
+  gap: 20px;  /* espacio entre items */
+}
+
+.mag-item {
+  text-align: center;
+}
+
+.mag-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  max-height: 180px; /* controla que no se vean gigantes */
+  display: block;
+  margin: 0 auto;
+
+  border: 2px solid #eee;               /* borde fino */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* sombra suave */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mag-item figcaption {
+  margin-top: 10px;
+}
+
+.mag-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.mag-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.mag-item img:hover {
+  transform: scale(1.70);                /* ligero zoom al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* sombra más fuerte */
+}
+

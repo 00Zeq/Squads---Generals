@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+     <link rel="stylesheet" href="squads.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuadrones y Generales</title>
+    </head>
+    <body>
+      <div class="board-wrapper">
+    <h1 class="board-title">
+    <span class="title-word">Escuadrones</span>
+    <span class="title-word" id="amper">&</span>
+    <span class="title-word">Generales</span>
+  </h1>
+ <table class="board" aria-label="Tablero 18 por 16">
+    <tbody>
+      <!-- 
+  <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>
+      </tr> Fila 16-->
+
+      <!-- 
+      <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>
+      </tr> Fila 15-->
+
+      <!-- Fila 14-->
+        <tr>
+         <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>  <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado --><td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 13 -->
+        <tr>
+         <td></td> <td></td> <td class="special-a"></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+         <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td class="special-a"></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 12 -->
+        <tr>
+         <td></td> <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>  <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 11 -->
+        <tr>
+         <td></td> <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>  <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 10 -->
+        <tr>
+         <td></td> <td></td> <td class="special-a"></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>  <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td class="special-a"></td> 
+        <td class="special-a"></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td class="special-a"></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 9 -->
+        <tr>
+         <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>  <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td class="special-a"></td> <td class="special-b"></td> 
+        <td class="special-b"></td> <td class="special-a"></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 8 -->
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>   <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td class="special-a"></td> <td class="special-b"></td> 
+        <td class="special-b"></td> <td class="special-a"></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 7 -->
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>   <!-- agregado -->
+        <td></td> <td></td> <td class="special-a"></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td class="special-a"></td> 
+        <td class="special-a"></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td class="special-a"></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 6 -->
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>   <!-- agregado -->
+        <td></td> <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td> 
+      </tr>
+
+      <!-- Fila 5 -->
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>   <!-- agregado -->
+        <td></td> <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td class="special-a"></td> <td class="special-a"></td> <td class="special-a"></td> <td></td> 
+      </tr>
+
+      <!-- Fila 4 -->
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>   <!-- agregado -->
+        <td></td> <td></td> <td  class="special-a"></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td class="special-a"></td> <td></td> <td></td> 
+      </tr>
+
+      <!-- Fila 3 -->
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>   <!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td><!-- agregado -->
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+      </tr>
+
+      <!--
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>
+      </tr>  Fila 2 -->
+
+      <!--
+        <tr>
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td> <td></td> <td></td> <td></td>
+      </tr>  Fila 1 -->
+
+    </tbody>
+  </table>
+  </div>
+ 
+
+    <main id="main-doc">
+
+      <div>
+
+        <nav class="navbar">
+     <!-- <a href="#home" class="navlink" >Inicio</a> -->
+          <a href="#reglas" class="navlink" >Reglas</a>
+          <a href="#formations" class="navlink" >Battle Formations</a>
+     <!-- <a href="#tutorial" class="navlink" >Tutoriales</a> -->
+        </nav>
+
+      </div>
+
+
+
+      <div class="content" id="home">
+
+      </div>
+
+      <div class="content" id="reglas">
+
+        <h2>Reglas</h2>
+
+        <p>Tenes las orden del rey y las ordenes del general. Tenes que matar al rey enemigo o tomarle su castillo para ganar.</p>
+
+      </div>
+
+      <div class="content" id="formations">
+
+        <section class="magazine-section" aria-labelledby="magazine-title">
+
+  <div class="mag-grid">
+    <figure class="mag-item">
+      <h3>Ale vs Zequi</h3>
+            <figcaption>
+        <p>Una jugada calculada que cambió el curso de la partida en el turno tres.</p>
+      </figcaption>
+      <img src="imagenes/Ale vs Zequi.jpeg" alt="Ale vs Zequi" loading="lazy">
+
+    </figure>
+
+    <figure class="mag-item">
+      <h3>Maxi vs Zequi</h3>
+              <p>El equipo rojo abrió camino con precisión milimétrica y control de zonas.</p>
+      </figcaption>
+      <img src="imagenes/Maxi vs Zequi.jpeg" alt="Maxi vs Zequi" loading="lazy">
+      <figcaption>
+
+    </figure>
+
+    <figure class="mag-item">
+      <h3>Jorge vs Maxi</h3>
+      <figcaption>
+        <p>El dominio de casilleros especiales fue clave para cerrar el empate.</p>
+      </figcaption>
+      <img src="imagenes/Jorge vs Maxi.jpeg" alt="Jorge vs Maxi" loading="lazy">      
+    </figure>
+    </section>
+  </div>
+<!-- 
+<div class="content" id="tutorial">
+
+         <div class="video-container">
+    <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/Tafj_EaUDeY" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+ -->
+      </div>
+
+      
+    </main>
+    </body>
+    </html>
