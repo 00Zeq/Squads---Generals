@@ -314,3 +314,18 @@ table.board {
 .header-score {
   text-align: right;
 }
+
+
+
+.content {
+  display: none;
+}
+
+.content { display: none; }
+.content:target { display: block; }
+.content#news { display: block; }
+
+/* Si otra sección anterior está targeteada, oculta #news (que está al final) */
+.content:target ~ .content#news {
+  display: none;
+}
